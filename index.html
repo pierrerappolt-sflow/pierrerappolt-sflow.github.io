@@ -2,81 +2,33 @@
 <html>
 <head>
     <title>David S. Lim</title>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Source Code Pro', monospace;
-            color: #333;
-            background-color: #fff;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 2rem;
-            line-height: 1.6;
-            font-size: 20px;
-        }
-        .content {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-        .container {
-            max-width: 800px;
-            width: 100%;
-            text-align: left;
-            margin-left: 2rem;
-        }
-        .image {
-            height: 4.8rem;
-            align-self: flex-start;  /* Aligns the top of the image with the top of the text */
-        }
-        .bold {
-            font-weight: 700;
-        }
-        /* Add new style for background image */
-        .flash-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('slavoj_zizek.webp') no-repeat center center fixed;
-            background-size: cover;
-            z-index: -1;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet"> <!-- Linked the external CSS file -->
 </head>
-<body>
-    <!-- Add new div for flashing background -->
-    <div id="flashBg" class="flash-bg" style="display: none;"></div>
 
-<body>
+<body onclick="loadAllLinesInstantly();">
     <div class="content">
         <img src="me.png" class="image">
         <div class="container">
             <span id="typed"></span>
+            <div id="fadein"></div>
         </div>
+    </div>
+    <div class="footer">
+        <a href="https://www.google.com" class="message-link">
+            <div class="message-box">
+                <span>Send a Message</span>
+                <span class="send-button">&#10148;</span>
+            </div>
+        </a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/gh/mattboldt/typed.js@2.0.12/lib/typed.min.js"></script>
-    <script>
-        var typed = new Typed('#typed', {
-            strings: ["<span class='bold'>David S. Lim</span> is an <span class='bold'>AI expert</span> specializing in using the <span class='bold'>latest AI research to power transformative products</span>. Currently, he is a health AI researcher at <span class='bold'>Apple</span>.<br/><br/> Previously, David was a researcher at <span class='bold'>Stanford's Center for Research on Foundation Models</span> where he worked on evaluating foundation models like GPT-4, DALLE and Stable Diffusion and improving them for specific domains such as healthcare. Foundation models created by him are widely used with over <span class='bold'>3 million monthly downloads</span> on <span class='bold'>Hugging Face</span>.<br/><br/> He was a founding employee at Andrew Ng's pioneering AI startup, <span class='bold'>Woebot Health</span> with <span class='bold'>$114 million</span> in funding to date. At <span class='bold'>Spoke</span>, David led the machine learning team to scale AI-powered helpdesks to serve millions of users worldwide before the company's acquisition by <span class='bold'>Okta</span>.<br/><br/> As an experienced <span class='bold'>AI consultant</span>, David empowers clients by demystifying the potential of AI and arms them with the information to navigate an AI-powered future."],
-            typeSpeed: 20,
-            backDelay: 500,
-            backSpeed: 0,
-            loop: false,
-            cursorChar: '|',
-            smartBackspace: false
-        });
-        setInterval(function() {
-            var flashBg = document.getElementById('flashBg');
-            flashBg.style.display = 'block';
-            setTimeout(function() {
-                flashBg.style.display = 'none';
-            }, 30);  // Flash for 50 milliseconds
-        }, 3000);  // Flash every 5 seconds
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script> <!-- Linked the external JavaScript file -->
 </body>
+
 </html>
